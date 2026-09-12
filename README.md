@@ -56,7 +56,9 @@ src/main/webapp/
 
 ## Screenshots
 
-*(Add screenshots here, e.g. the role selection screen, employee dashboard, manager approval view)*
+<img width="1911" height="903" alt="image" src="https://github.com/user-attachments/assets/8e5c212c-c91e-4221-8e43-51ee6025b29e" />
+<img width="627" height="781" alt="image" src="https://github.com/user-attachments/assets/6eb3b403-5ab8-4875-bd35-c956a5489215" />
+
 
 ## Author
 
