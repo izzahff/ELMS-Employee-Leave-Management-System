@@ -1,0 +1,328 @@
+/* Admin Styles */
+.admin-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.admin-card-header {
+    padding: 1.2rem 1.5rem;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-card-header h3 {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.admin-card-content {
+    padding: 1.5rem;
+}
+
+/* Leave Details Styles */
+.leave-details {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.detail-group {
+    display: flex;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.detail-group:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.detail-group label {
+    flex: 0 0 200px;
+    font-weight: 600;
+    color: var(--text-light);
+}
+
+.detail-group span {
+    flex: 1;
+    color: var(--text-color);
+}
+
+/* Attachments List */
+.attachments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.attachment-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+
+.attachment-item i {
+    color: var(--primary-color);
+}
+
+.attachment-item a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.attachment-item a:hover {
+    color: var(--primary-color);
+}
+
+/* Sidebar Overrides for Admin */
+.sidebar {
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+}
+
+.sidebar.collapsed {
+    transform: translateX(-100%);
+}
+
+.main-content {
+    margin-left: 280px;
+    transition: margin-left 0.3s ease;
+}
+
+.main-content.expanded {
+    margin-left: 0;
+}
+
+/* Form Styles */
+.admin-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.admin-form .form-group {
+    margin-bottom: 1.2rem;
+}
+
+/* Table Styles */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.admin-table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.admin-table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* User Card Styles */
+.user-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.2rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.user-card-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 1rem;
+}
+
+.user-card-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.user-card-info {
+    flex: 1;
+}
+
+.user-card-name {
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+.user-card-email {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+}
+
+/* Leave Type Styles */
+.leave-type-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.leave-type-item:last-child {
+    border-bottom: none;
+}
+
+.leave-type-name {
+    font-weight: 500;
+}
+
+/* Stats Card */
+.stats-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1rem;
+}
+
+.stats-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.stats-value {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.stats-label {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Search and Filter */
+.search-filter {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.search-box {
+    flex: 1;
+    position: relative;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 0.75rem;
+    padding-left: 2.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.search-box i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-light);
+}
+
+/* Status Badge */
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.status-badge.pending {
+    background-color: #ffeaa7;
+    color: #d69e2e;
+}
+
+.status-badge.approved {
+    background-color: #c6f6d5;
+    color: #2f855a;
+}
+
+.status-badge.rejected {
+    background-color: #fed7d7;
+    color: #c53030;
+}
+
+.status-badge.cancelled {
+    background-color: #e2e8f0;
+    color: #718096;
+}
+
+.status-badge.active {
+    background-color: #c6f6d5;
+    color: #2f855a;
+}
+
+.status-badge.inactive {
+    background-color: #e2e8f0;
+    color: #718096;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .search-filter {
+        flex-direction: column;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .action-buttons .btn {
+        width: 100%;
+    }
+    
+    .detail-group {
+        flex-direction: column;
+    }
+    
+    .detail-group label {
+        margin-bottom: 0.5rem;
+    }
+}

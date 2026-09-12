@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>🔍 Live Debug Your Leave Application Page</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 20px; 
+            line-height: 1.6;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .step {
+            margin: 20px 0;
+            padding: 20px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            background: #f9f9f9;
+        }
+        .urgent {
+            border-color: #ff4444;
+            background: #ffe6e6;
+        }
+        .info {
+            border-color: #0066cc;
+            background: #e6f3ff;
+        }
+        .success {
+            border-color: #44aa44;
+            background: #e6ffe6;
+        }
+        .code {
+            background: #f8f8f8;
+            padding: 15px;
+            border-left: 4px solid #666;
+            margin: 15px 0;
+            font-family: monospace;
+            font-size: 13px;
+            overflow-x: auto;
+            border-radius: 4px;
+            white-space: pre-wrap;
+        }
+        .alert {
+            background: #d4edda;
+            border: 2px solid #c3e6cb;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .checklist {
+            list-style-type: none;
+            padding: 0;
+        }
+        .checklist li {
+            margin: 8px 0;
+            padding: 12px;
+            background: #f0f0f0;
+            border-left: 4px solid #007bff;
+            border-radius: 4px;
+        }
+        .checklist li:before {
+            content: "☐ ";
+            font-weight: bold;
+            margin-right: 8px;
+            color: #007bff;
+        }
+        h3 {
+            color: #333;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        .screenshot {
+            background: #fff3cd;
+            border: 2px solid #ffeaa7;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Live Debug: Your Leave Application Page</h1>
+        
+        <div class="alert">
+            <h3>✅ GOOD NEWS!</h3>
+            <p><strong>Your JavaScript code looks perfect!</strong> The issue is likely a small runtime problem. Let's debug it live.</p>
+            <p>Your backend tests passed, so the controller is working. We just need to find why the frontend isn't connecting properly.</p>
+        </div>
+
+        <div class="step urgent">
+            <h3>🚨 STEP 1: Open Your Leave Application Page</h3>
+            <ol>
+                <li><strong>Go to your leave application page</strong></li>
+                <li><strong>Open Developer Tools (F12)</strong></li>
+                <li><strong>Click Console tab</strong></li>
+                <li><strong>Look for the debug messages</strong></li>
+            </ol>
+            
+            <p><strong>You should see these console messages when the page loads:</strong></p>
+            <div class="code">=== Page Load Debug Info ===
+Context Path: /ELMS_3.0
+Controller URL: /ELMS_3.0/LeaveApplicationController
+Current URL: http://localhost:8080/ELMS_3.0/Employee/EmployeeLeaveApplication.jsp
+
+=== Leave Application Form Loaded ===
+Form Elements Found:
+- Duration Type Select: Found
+- Leave Type Select: Found
+- Form: Found</div>
+            
+            <p><strong>📝 REPORT: Do you see these messages? Any errors in red?</strong></p>
+        </div>
+
+        <div class="step info">
+            <h3>🎯 STEP 2: Test Duration Type Selection</h3>
+            <ol>
+                <li><strong>In the console, make sure you can see the messages</strong></li>
+                <li><strong>Select "Full Day" from the Duration Type dropdown</strong></li>
+                <li><strong>Watch the console for new messages</strong></li>
+            </ol>
+            
+            <p><strong>You should see these messages when you select "Full Day":</strong></p>
+            <div class="code">=== Duration Type Change Event ===
+Selected Duration Type: Full Day
+
+=== AJAX Call Starting ===
+Fetching leave types for: Full Day
+AJAX URL: /ELMS_3.0/LeaveApplicationController?action=getLeaveTypes&durationType=Full%20Day
+
+=== AJAX Response Received ===
+Response Status: 200
+Response OK: true
+Raw Response Text: {"success":true,"leaveTypes":[...]}
+Parsed JSON Data: {success: true, leaveTypes: Array(2)}
+Processing 2 leave types
+✅ Leave types loaded successfully</div>
+            
+            <div class="screenshot">
+                <h4>📸 What to Check:</h4>
+                <ul class="checklist">
+                    <li>Do you see "Duration Type Change Event" message?</li>
+                    <li>Do you see "AJAX Call Starting" message?</li>
+                    <li>What's the AJAX URL shown?</li>
+                    <li>What's the Response Status? (should be 200)</li>
+                    <li>What's the Raw Response Text?</li>
+                    <li>Any error messages in red?</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="step info">
+            <h3>🌐 STEP 3: Check Network Tab</h3>
+            <ol>
+                <li><strong>Click Network tab in Developer Tools</strong></li>
+                <li><strong>Clear the network log (🚫 button)</strong></li>
+                <li><strong>Select "Full Day" again</strong></li>
+                <li><strong>Look for LeaveApplicationController request</strong></li>
+            </ol>
+            
+            <p><strong>You should see:</strong></p>
+            <div class="code">LeaveApplicationController?action=getLeaveTypes&durationType=Full%20Day
+Status: 200
+Response: {"success":true,"leaveTypes":[...]}</div>
+            
+            <div class="screenshot">
+                <h4>📊 Network Tab Analysis:</h4>
+                <ul class="checklist">
+                    <li>Is the request being made?</li>
+                    <li>What's the status code? (200 = good, 404 = not found, 500 = error)</li>
+                    <li>Click on the request - what's the response?</li>
+                    <li>Does the response match your successful test?</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="step success">
+            <h3>🔧 STEP 4: Check Dropdown Population</h3>
+            <p>After selecting "Full Day", check the Leave Type dropdown:</p>
+            
+            <ol>
+                <li><strong>Look at the Leave Type dropdown</strong></li>
+                <li><strong>Is it still showing "Loading..." or "Select Leave Type"?</strong></li>
+                <li><strong>Right-click the dropdown → Inspect Element</strong></li>
+                <li><strong>Look at the HTML inside the select element</strong></li>
+            </ol>
+            
+            <p><strong>The dropdown HTML should look like:</strong></p>
+            <div class="code">&lt;select id="leaveTypeId" name="leavetypeid" required&gt;
+    &lt;option value=""&gt;Select Leave Type&lt;/option&gt;
+    &lt;option value="LT001" data-standard-duration="21"&gt;Annual Leave&lt;/option&gt;
+    &lt;option value="LT002" data-standard-duration="14"&gt;Sick Leave&lt;/option&gt;
+&lt;/select&gt;</div>
+            
+            <div class="screenshot">
+                <h4>🎯 Dropdown Investigation:</h4>
+                <ul class="checklist">
+                    <li>Is the dropdown enabled? (not grayed out)</li>
+                    <li>Are there option elements with actual leave type names?</li>
+                    <li>Can you click and see the options?</li>
+                    <li>What does the dropdown show when you click it?</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>🐛 COMMON ISSUES & FIXES</h3>
+            
+            <h4>🔥 Issue 1: No AJAX Call Made</h4>
+            <p><strong>Symptom:</strong> No "AJAX Call Starting" message in console</p>
+            <p><strong>Cause:</strong> JavaScript error preventing event handler</p>
+            <p><strong>Fix:</strong> Look for JavaScript errors in red in console</p>
+            
+            <h4>🔥 Issue 2: AJAX Call Fails</h4>
+            <p><strong>Symptom:</strong> AJAX call starts but fails</p>
+            <p><strong>Cause:</strong> Wrong URL or session expired</p>
+            <p><strong>Fix:</strong> Check Network tab for actual request/response</p>
+            
+            <h4>🔥 Issue 3: Response Parsing Fails</h4>
+            <p><strong>Symptom:</strong> "JSON Parse Error" in console</p>
+            <p><strong>Cause:</strong> Server returned HTML instead of JSON</p>
+            <p><strong>Fix:</strong> Check if you're still logged in</p>
+            
+            <h4>🔥 Issue 4: Dropdown Not Populated</h4>
+            <p><strong>Symptom:</strong> AJAX works but dropdown stays empty</p>
+            <p><strong>Cause:</strong> DOM manipulation error</p>
+            <p><strong>Fix:</strong> Check if leaveTypeSelect element exists</p>
+        </div>
+
+        <div class="step urgent">
+            <h3>🚨 QUICK DIAGNOSTIC TEST</h3>
+            <p>Copy and paste this into your browser console while on the leave application page:</p>
+            
+            <div class="code">// Quick diagnostic test
+console.log("=== DIAGNOSTIC TEST ===");
+console.log("Duration select found:", document.getElementById('durationType') ? 'YES' : 'NO');
+console.log("Leave type select found:", document.getElementById('leaveTypeId') ? 'YES' : 'NO');
+console.log("Current duration value:", document.getElementById('durationType')?.value);
+console.log("Current leave type options:", document.getElementById('leaveTypeId')?.options.length);
+
+// Test AJAX manually
+const testUrl = '<%= request.getContextPath() %>/LeaveApplicationController?action=getLeaveTypes&durationType=Full Day';
+console.log("Testing URL:", testUrl);
+fetch(testUrl).then(r => r.text()).then(t => console.log("Manual AJAX result:", t));</div>
+            
+            <p><strong>This will show you exactly what's working and what's not!</strong></p>
+        </div>
+
+        <div class="step">
+            <h3>📝 REPORT BACK CHECKLIST</h3>
+            <p>Please check and tell me:</p>
+            
+            <ol>
+                <li><strong>Console Messages:</strong> What debug messages do you see when page loads?</li>
+                <li><strong>Duration Selection:</strong> What happens in console when you select "Full Day"?</li>
+                <li><strong>Network Tab:</strong> Is the AJAX request being made? What's the response?</li>
+                <li><strong>Dropdown State:</strong> What does the Leave Type dropdown show after selecting duration?</li>
+                <li><strong>Diagnostic Test:</strong> What does the diagnostic script output?</li>
+                <li><strong>Any Errors:</strong> Any red error messages in console?</li>
+            </ol>
+            
+            <p><strong>With this information, I can pinpoint the exact issue and give you the fix!</strong></p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,264 @@
+/* Admin Registration Success Page Styles */
+
+/* Viewport-constrained container */
+.container {
+    max-width: 420px;
+    max-height: 95vh;
+    margin: 2.5vh auto;
+    padding: 0.5rem;
+    overflow-y: auto;
+    background: transparent;
+}
+
+.success-card {
+    background: white;
+    background-color: white !important;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-top: 3px solid #2ecc71;
+    height: auto;
+    position: relative;
+}
+
+/* Compact header */
+.success-header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.success-icon i {
+    font-size: 2.5rem;
+    color: #2ecc71;
+    margin-bottom: 10px;
+}
+
+.success-header h2 {
+    color: var(--text-color, #333);
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.success-header p {
+    color: var(--text-light, #6c757d);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Compact admin info grid */
+.admin-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.admin-details {
+    background: #f8f9fa;
+    background-color: #f8f9fa !important;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    padding: 12px;
+    position: relative;
+}
+
+.admin-details h4 {
+    font-size: 0.8rem;
+    color: var(--text-color, #333);
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.detail-item {
+    margin-bottom: 8px;
+}
+
+.detail-item:last-child {
+    margin-bottom: 0;
+}
+
+.detail-label {
+    font-size: 0.75rem;
+    color: var(--text-light, #6c757d);
+    display: block;
+    margin-bottom: 2px;
+}
+
+.detail-value {
+    font-size: 0.85rem;
+    color: var(--text-color, #333);
+    font-weight: 500;
+}
+
+/* Compact ID display */
+.generated-id {
+    background: #2ecc71;
+    background-color: #2ecc71 !important;
+    color: white;
+    border-radius: 6px;
+    padding: 15px 12px;
+    text-align: center;
+    margin: 15px 0;
+    border: 1px solid #27ae60;
+}
+
+.generated-id p {
+    font-size: 0.8rem;
+    margin-bottom: 8px;
+    opacity: 0.9;
+    color: white;
+}
+
+.id-display {
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.generated-id small {
+    font-size: 0.7rem;
+    opacity: 0.8;
+    color: white;
+}
+
+/* Compact notes */
+.note {
+    background: #fff3cd;
+    background-color: #fff3cd !important;
+    border: 1px solid #ffeaa7;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 15px 0;
+    font-size: 0.75rem;
+    color: #856404;
+}
+
+.note strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.note ul {
+    margin: 0;
+    padding-left: 15px;
+}
+
+.note li {
+    margin: 2px 0;
+    line-height: 1.3;
+}
+
+/* Compact button layout */
+.action-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 12px;
+    font-weight: 500;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: var(--transition, all 0.3s ease);
+    font-size: 0.8rem;
+}
+
+.btn i {
+    font-size: 0.75rem;
+}
+
+.btn-primary {
+    background-color: #0277bd;
+    background: #0277bd !important;
+    color: white;
+    border: 1px solid #0277bd;
+}
+
+.btn-primary:hover {
+    background-color: #004c8c;
+    background: #004c8c !important;
+    color: white;
+}
+
+.btn-success {
+    background-color: #2ecc71;
+    background: #2ecc71 !important;
+    color: white;
+    border: 1px solid #2ecc71;
+}
+
+.btn-success:hover {
+    background-color: #27ae60;
+    background: #27ae60 !important;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    background: #6c757d !important;
+    color: white;
+    border: 1px solid #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #545b62;
+    background: #545b62 !important;
+    color: white;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+    .container {
+        max-width: 95%;
+        max-height: 97vh;
+        margin: 1.5vh auto;
+        padding: 0.25rem;
+    }
+    
+    .success-card {
+        padding: 15px;
+    }
+    
+    .admin-info-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .action-buttons {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+    
+    .success-icon i {
+        font-size: 2rem;
+    }
+    
+    .success-header h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Ensure no overflow */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}

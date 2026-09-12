@@ -1,0 +1,224 @@
+/* Settings Page Styles */
+.settings-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.settings-menu {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.settings-item {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-color);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.settings-item:last-child {
+    border-bottom: none;
+}
+
+.settings-item:hover {
+    background-color: #f8f9fa;
+}
+
+.settings-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.settings-icon i {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.settings-info {
+    flex: 1;
+}
+
+.settings-info h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.settings-info p {
+    margin: 0.3rem 0 0;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.settings-item.danger .settings-icon i {
+    color: var(--error-color);
+}
+
+.settings-item.danger:hover {
+    background-color: #fff5f5;
+}
+
+.settings-item .fa-chevron-right {
+    color: var(--text-light);
+    margin-left: 1rem;
+}
+
+/* Form Card Styles */
+.settings-form-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 2rem;
+}
+
+.settings-form-card.danger {
+    border: 1px solid var(--error-color);
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+/* Profile Picture Section */
+.profile-picture-section {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-picture {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-picture-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.profile-picture:hover .profile-picture-overlay {
+    opacity: 1;
+}
+
+.upload-btn {
+    color: white;
+    cursor: pointer;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.upload-btn i {
+    margin-right: 0.5rem;
+}
+
+/* Password Requirements */
+.password-requirements {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+.password-requirements h4 {
+    margin: 0 0 0.5rem;
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.password-requirements ul {
+    margin: 0;
+    padding-left: 1.2rem;
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.password-requirements li {
+    margin-bottom: 0.3rem;
+}
+
+/* Delete Account Warning */
+.delete-warning {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.delete-warning i {
+    font-size: 3rem;
+    color: var(--error-color);
+    margin-bottom: 1rem;
+}
+
+.delete-warning h3 {
+    color: var(--error-color);
+    margin-bottom: 1rem;
+}
+
+.delete-warning ul {
+    text-align: left;
+    margin: 1rem 0;
+    padding-left: 1.2rem;
+    color: var(--text-light);
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-top: 0.2rem;
+}
+
+@media screen and (max-width: 576px) {
+    .settings-container {
+        padding: 0.5rem;
+    }
+    
+    .settings-form-card {
+        padding: 1rem;
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+    }
+    
+    .form-buttons .btn {
+        width: 100%;
+    }
+}

@@ -1,0 +1,339 @@
+@charset "UTF-8";
+
+/* Account Deletion Page Styles */
+.settings-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.settings-form-card.danger {
+    border: 2px solid #dc3545;
+    border-radius: 12px;
+    padding: 2rem;
+    background: #fff;
+}
+
+.delete-warning {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f8d7da;
+    border-radius: 8px;
+    border-left: 4px solid #dc3545;
+}
+
+.delete-warning i {
+    font-size: 3rem;
+    color: #dc3545;
+    margin-bottom: 1rem;
+}
+
+.delete-warning h3 {
+    color: #721c24;
+    margin-bottom: 1rem;
+}
+
+.delete-warning p {
+    color: #721c24;
+    margin-bottom: 1rem;
+}
+
+.delete-warning ul {
+    text-align: left;
+    color: #721c24;
+    margin: 1rem 0;
+}
+
+.delete-warning li {
+    margin-bottom: 0.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input[type="password"]:focus {
+    outline: none;
+    border-color: #dc3545;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-top: 0.2rem;
+    transform: scale(1.2);
+}
+
+.form-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary {
+    background: #28a745;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #1e7e34;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+}
+
+.btn-danger:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.error-message {
+    background: #f8d7da;
+    color: #721c24;
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 4px solid #dc3545;
+    margin-bottom: 1rem;
+}
+
+.error-message i {
+    margin-right: 0.5rem;
+}
+
+/* Modal Styles */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 300px;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.3s ease-in-out;
+}
+
+.popup-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.popup-content h3 {
+    margin: 0 0 15px 0;
+    color: #333;
+}
+
+.popup-content p {
+    margin: 0 0 20px 0;
+    color: #666;
+    line-height: 1.5;
+}
+
+.popup-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.popup-btn:hover {
+    background-color: #0056b3;
+}
+
+.error-popup .popup-content {
+    border-top: 5px solid #dc3545;
+}
+
+/* Confirmation Modal Styles */
+.confirm-popup .popup-content {
+    border-top: 5px solid #dc3545;
+    text-align: left;
+}
+
+.confirm-popup .popup-icon {
+    color: #dc3545;
+    text-align: center;
+}
+
+.confirm-popup h3 {
+    color: #dc3545;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.confirm-popup .consequences-list {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+.confirm-popup .consequences-list h4 {
+    color: #dc3545;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.confirm-popup .consequences-list ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.confirm-popup .consequences-list li {
+    margin-bottom: 5px;
+    color: #495057;
+}
+
+.confirm-popup .warning-text {
+    background: #fff3cd;
+    color: #856404;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 600;
+    margin: 15px 0;
+    border: 1px solid #ffeaa7;
+}
+
+.confirm-popup .modal-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.confirm-popup .btn-cancel {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.confirm-popup .btn-cancel:hover {
+    background: #0056b3;
+}
+
+.confirm-popup .btn-confirm {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.confirm-popup .btn-confirm:hover {
+    background: #c82333;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { 
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to { 
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-buttons {
+        flex-direction: column;
+    }
+    
+    .btn {
+        justify-content: center;
+    }
+    
+    .popup-content {
+        margin: 1rem;
+        width: calc(100% - 2rem);
+        min-width: auto;
+    }
+    
+    .confirm-popup .modal-buttons {
+        flex-direction: column;
+    }
+}
