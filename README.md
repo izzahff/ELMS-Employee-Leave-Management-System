@@ -23,6 +23,8 @@ A web-based Employee Leave Management System built for IMNSB, supporting three r
 - **Frontend:** HTML, CSS, JavaScript
 
 ## Project Structure
+
+```
 src/main/java/elms/
 ├── connection/ # Database connection handling
 ├── controller/ # Request handling and routing
@@ -39,6 +41,7 @@ src/main/webapp/
 ├── Manager/ # Manager portal JSPs
 ├── css/ # Stylesheets
 └── WEB-INF/ # Deployment descriptor and libraries
+```
 
 ## Setup Instructions
 
